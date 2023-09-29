@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { client } from './GraphQL/client';
+import { ApolloProvider } from '@apollo/client';
+import Header from './components/Header';
+import { Container } from '@mui/material';
+import AppContainer from './components/AppContainer';
 
 function App() {
+  const theme = createTheme();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <ApolloProvider client={client}>
+        <Header />
+        <Container maxWidth="md" sx={{ boxShadow: 3, my: 10, p: 2, borderRadius: 5 }}>
+          <AppContainer />
+        </Container>
+      </ApolloProvider>
+    </ThemeProvider>
   );
 }
 
