@@ -17,7 +17,7 @@ Before running the application, make sure you have the following software instal
   To install the application, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/mahmoud-irshaid/task-app.git
+git clone https://github.com/mahmoud-irshaid/Todo-App-GraphQL.git
 ```
 
 Then navigate to the project directory and install the required packages:
